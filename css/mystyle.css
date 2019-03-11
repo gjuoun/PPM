@@ -40,9 +40,10 @@ footer {
   width: 100%;
 }
 
-#loginbody {
+#login-body {
+  min-height: 420px;
   width: 100%;
-  padding-top: 120px;
+  padding-top: 70px;
 }
 
 #chat-container, #login-container, #mainpage-container {
