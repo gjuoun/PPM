@@ -1,3 +1,4 @@
+/*Universal css settings*/
 html, body {
   height: 100%;
   width: 100%;
@@ -19,29 +20,6 @@ footer {
   height: 100%;
 }
 
-#chat-header {
-  margin: 0;
-  height: 100%;
-  width: 60%;
-  border: none;
-}
-#chat-header .collection-item.avatar {
-  padding-right: 0;
-  background: none;
-  width: 100%;
-}
-#chat-header .collection-item.avatar img {
-  background: white;
-}
-#chat-header .collection-item.avatar a {
-  padding: 0;
-}
-
-#avatar-container {
-  padding: 16px;
-  height: 150px;
-}
-
 nav {
   line-height: 50px !important;
 }
@@ -61,7 +39,11 @@ nav {
   margin: 0 !important;
 }
 .collection .collection-item.avatar {
+  background: #f9f9f9;
   min-height: 50px !important;
+}
+.collection .collection-item.avatar img {
+  background: #fff;
 }
 .collection .collection-item:hover {
   background: #eee;
@@ -136,6 +118,29 @@ nav {
   display: inline;
 }
 
+#chat-header {
+  margin: 0;
+  height: 100%;
+  width: 60%;
+  border: none;
+}
+#chat-header .collection-item.avatar {
+  padding-right: 0;
+  background: none;
+  width: 100%;
+}
+#chat-header .collection-item.avatar img {
+  background: white;
+}
+#chat-header .collection-item.avatar a {
+  padding: 0;
+}
+
+#avatar-container {
+  padding: 16px;
+  height: 150px;
+}
+
 #chat-footer .footer-copyright {
   padding: 0;
   border-top: 0.5px lightgrey solid;
@@ -143,20 +148,25 @@ nav {
   color: grey;
 }
 #chat-footer .footer-copyright .container {
-  height: 100%;
+  height: 51px;
   width: 100%;
   padding: 0 5px;
 }
-#chat-footer .footer-copyright .container form {
-  text-align: center;
-}
-#chat-footer .footer-copyright .container form.row {
+#chat-footer .footer-copyright .container .row {
   margin-bottom: 0;
 }
-#chat-footer .footer-copyright .container form i {
-  vertical-align: middle;
-  font-size: 2em;
-  color: #00e676;
+#chat-footer .footer-copyright .container .row .input-field {
+  height: 51px;
+  margin: 0;
+  display: inline;
+}
+#chat-footer .footer-copyright .container .row .input-field.col.s3 {
+  padding: 10px;
+}
+#chat-footer .footer-copyright .container .row .input-field.col.s3 button {
+  width: 80%;
+  position: absolute;
+  top: 20%;
 }
 
 /*# sourceMappingURL=mystyle.css.map */
