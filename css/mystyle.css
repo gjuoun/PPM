@@ -4,6 +4,36 @@ html, body {
   width: 100%;
 }
 
+.scroll {
+  width: 20px;
+  height: 200px;
+  overflow: auto;
+  float: left;
+  margin: 0 10px;
+}
+
+.scroll1::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scroll1::-webkit-scrollbar-thumb {
+  background: #666;
+}
+
+.scroll2::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scroll2::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 20px;
+}
+
+.scroll2::-webkit-scrollbar-track {
+  background: #ddd;
+  border-radius: 20px;
+}
+
 footer {
   position: fixed;
   bottom: 0;
@@ -151,6 +181,7 @@ nav {
   height: 51px;
   width: 100%;
   padding: 0 5px;
+  margin: 0;
 }
 #chat-footer .footer-copyright .container .row {
   margin-bottom: 0;
