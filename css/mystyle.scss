@@ -1,0 +1,211 @@
+$materialize-green: #00c853;
+$materialize-light-green: #00e676;
+
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#loginbody {
+  width: 100%;
+  padding-top: 120px;
+}
+
+#chat-container, #login-container, #mainpage-container {
+  width: 100%;
+  height: 100%;
+}
+
+#chat-header {
+  margin: 0;
+  height: 100%;
+  width: 60%;
+  border: none;
+
+  .collection-item.avatar {
+    padding-right: 0;
+    background: none;
+    width: 100%;
+
+    img {
+      background: white;
+    }
+
+    a {
+      padding: 0;
+    }
+
+  }
+}
+
+#avatar-container {
+  padding: 16px;
+  height: 150px;
+}
+
+nav {
+  line-height: 50px !important;
+}
+
+/* label focus color */
+.input-field input:focus + label {
+  color: $materialize-green !important;
+}
+
+/* label underline focus color */
+.row .input-field input:focus {
+  border-bottom: 1px solid $materialize-green !important;
+  box-shadow: 0 1px 0 0 $materialize-green !important
+}
+
+// universal collection style
+.collection {
+  margin: 0 !important;
+
+  .collection-item {
+    &.avatar {
+      min-height: 50px !important;
+    }
+
+    &:hover {
+      background: #eee;
+    }
+  }
+}
+
+
+// main page
+.secondary-content {
+  &.preview-count {
+    background-color: $materialize-light-green !important;
+    color: #fff;
+    padding: 2px 5px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+  }
+
+  &.checked-message {
+    i {
+      &.double-check {
+        position: relative;
+        left: 20px;
+
+      }
+
+      color: $materialize-green;
+    }
+  }
+}
+
+
+#chat-body {
+  background: #eee;
+  margin: 0;
+  height: 90%;
+  width: 100%;
+  padding-bottom: 50px;
+
+  .row {
+    margin-bottom: 5px;
+
+    &.left {
+      position: relative;
+      width: 100%;
+      min-height: 50px;
+
+      img {
+        background: #fff;
+        width: 42px;
+        height: 42px;
+        position: absolute;
+        left: 10px;
+        bottom: 0px;
+      }
+
+      .card-panel {
+        max-width: 80%;
+        position: absolute;
+        left: 60px;
+        vertical-align: middle;
+        padding: 10px;
+        display: inline;
+
+      }
+    }
+
+    &.right {
+      position: relative;
+      width: 100%;
+      min-height: 50px;
+
+      img {
+        background: #fff;
+        width: 42px;
+        height: 42px;
+        position: absolute;
+        right: 10px;
+        bottom: 0px;
+      }
+
+      .card-panel {
+        max-width: 80%;
+        position: absolute;
+        right: 60px;
+        vertical-align: middle;
+        padding: 10px;
+        display: inline;
+
+      }
+    }
+
+
+  }
+
+}
+
+#chat-footer {
+
+  .footer-copyright {
+    padding: 0;
+    border-top: 0.5px lightgrey solid;
+    background: #fff;
+    color: grey;
+
+
+    .container {
+      height: 100%;
+      width: 100%;
+      padding: 0 5px;
+
+
+      form {
+
+        &.row {
+          margin-bottom: 0;
+        }
+
+        text-align: center;
+
+        i {
+          vertical-align: middle;
+          font-size: 2em;
+          color: $materialize-light-green;
+        }
+      }
+    }
+
+  }
+}
+
+

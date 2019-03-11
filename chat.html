@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PPM chat</title>
+    <link rel="stylesheet" href="css/mystyle.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+<div class="container" id="chat-container">
+    <header>
+        <nav>
+            <div class="nav-wrapper  green accent-4">
+                <a href="./index.html" data-target="mobile-demo" class="sidenav-trigger left">
+                    <i class="material-icons">arrow_back</i>
+                </a>
+                <ul class="collection left" id="chat-header">
+                    <li class="collection-item avatar">
+                        <a href="./index.html">
+                            <img src="./img/Emily.png" alt="" class="circle">
+                            <span class="title white-text">Emily</span>
+                            <p class="grey-text text-lighten-2">Last seen at 6 mins ago</p>
+                        </a>
+                    </li>
+                </ul>
+
+                <a href="#" class="sidenav-trigger right"><i class="material-icons">more_vert</i></a>
+
+            </div>
+        </nav>
+    </header>
+
+    <div id="chat-body">
+        <div class="row left">
+            <img src="./img/Emily.png" alt="" class="circle">
+            <div class="card-panel white">
+                <span class="">Hey How's going?</span>
+            </div>
+        </div>
+
+        <div class="row right">
+            <div class="card-panel green accent-1">
+                <span>Not bad</span>
+            </div>
+            <img src="./img/Sam.png" alt="" class="circle">
+        </div>
+
+        <div class="row left">
+            <img src="./img/Emily.png" alt="" class="circle">
+            <div class="card-panel white">
+                <span class="">Did you hear anything about John?</span>
+            </div>
+        </div>
+
+        <div class="row right">
+            <div class="card-panel green accent-1">
+                <span>I met him yesterday at his place</span>
+            </div>
+            <img src="./img/Sam.png" alt="" class="circle">
+        </div>
+    </div>
+
+
+    <footer id="chat-footer"
+            class="page-footer " style="padding-top: 0px;">
+        <div class="footer-copyright">
+            <div class="container">
+                <form class="row">
+                    <i class="material-icons left col s1 no-padding">account_circle</i>
+                    <input type="text" id="message" placeholder="Message" class="col s8 no-padding">
+                    <i class="material-icons right col s1 no-padding">account_circle</i>
+                    <i class="material-icons right col s1 no-padding">account_circle</i>
+                </form>
+            </div>
+        </div>
+</div>
+</footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script
+        src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script src="js/myjs.js"></script>
+</body>
+</html>

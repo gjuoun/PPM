@@ -1,0 +1,162 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#loginbody {
+  width: 100%;
+  padding-top: 120px;
+}
+
+#chat-container, #login-container, #mainpage-container {
+  width: 100%;
+  height: 100%;
+}
+
+#chat-header {
+  margin: 0;
+  height: 100%;
+  width: 60%;
+  border: none;
+}
+#chat-header .collection-item.avatar {
+  padding-right: 0;
+  background: none;
+  width: 100%;
+}
+#chat-header .collection-item.avatar img {
+  background: white;
+}
+#chat-header .collection-item.avatar a {
+  padding: 0;
+}
+
+#avatar-container {
+  padding: 16px;
+  height: 150px;
+}
+
+nav {
+  line-height: 50px !important;
+}
+
+/* label focus color */
+.input-field input:focus + label {
+  color: #00c853 !important;
+}
+
+/* label underline focus color */
+.row .input-field input:focus {
+  border-bottom: 1px solid #00c853 !important;
+  box-shadow: 0 1px 0 0 #00c853 !important;
+}
+
+.collection {
+  margin: 0 !important;
+}
+.collection .collection-item.avatar {
+  min-height: 50px !important;
+}
+.collection .collection-item:hover {
+  background: #eee;
+}
+
+.secondary-content.preview-count {
+  background-color: #00e676 !important;
+  color: #fff;
+  padding: 2px 5px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+.secondary-content.checked-message i {
+  color: #00c853;
+}
+.secondary-content.checked-message i.double-check {
+  position: relative;
+  left: 20px;
+}
+
+#chat-body {
+  background: #eee;
+  margin: 0;
+  height: 90%;
+  width: 100%;
+  padding-bottom: 50px;
+}
+#chat-body .row {
+  margin-bottom: 5px;
+}
+#chat-body .row.left {
+  position: relative;
+  width: 100%;
+  min-height: 50px;
+}
+#chat-body .row.left img {
+  background: #fff;
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  left: 10px;
+  bottom: 0px;
+}
+#chat-body .row.left .card-panel {
+  max-width: 80%;
+  position: absolute;
+  left: 60px;
+  vertical-align: middle;
+  padding: 10px;
+  display: inline;
+}
+#chat-body .row.right {
+  position: relative;
+  width: 100%;
+  min-height: 50px;
+}
+#chat-body .row.right img {
+  background: #fff;
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
+}
+#chat-body .row.right .card-panel {
+  max-width: 80%;
+  position: absolute;
+  right: 60px;
+  vertical-align: middle;
+  padding: 10px;
+  display: inline;
+}
+
+#chat-footer .footer-copyright {
+  padding: 0;
+  border-top: 0.5px lightgrey solid;
+  background: #fff;
+  color: grey;
+}
+#chat-footer .footer-copyright .container {
+  height: 100%;
+  width: 100%;
+  padding: 0 5px;
+}
+#chat-footer .footer-copyright .container form {
+  text-align: center;
+}
+#chat-footer .footer-copyright .container form.row {
+  margin-bottom: 0;
+}
+#chat-footer .footer-copyright .container form i {
+  vertical-align: middle;
+  font-size: 2em;
+  color: #00e676;
+}
+
+/*# sourceMappingURL=mystyle.css.map */
