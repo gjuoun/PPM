@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b7a6c6b-1835-46c8-9f9a-abfc5d35134c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/mystyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/mystyle.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/Emily.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/John.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/girl.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/sam.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/weather.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/PPM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PPM.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/myjs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,8 +21,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="251">
-                  <caret line="72" column="76" lean-forward="true" selection-start-line="72" selection-start-column="76" selection-end-line="72" selection-end-column="76" />
+                <state relative-caret-position="286">
+                  <caret line="22" column="38" lean-forward="true" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
                   <folding>
                     <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#nav#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                   </folding>
@@ -48,8 +33,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/chat.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="173">
-                  <caret line="57" column="31" lean-forward="true" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="64" />
+                <state relative-caret-position="429">
+                  <caret line="66" column="14" lean-forward="true" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
                   <folding>
                     <element signature="n#style#0;n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                   </folding>
@@ -61,20 +46,20 @@
       </split-first>
       <split-second>
         <leaf>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css/mystyle.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="190">
-                  <caret line="72" column="23" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
+                <state relative-caret-position="174">
+                  <caret line="53" column="25" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/login.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="273">
-                  <caret line="57" column="4" selection-start-line="57" selection-start-column="4" selection-end-line="64" selection-end-column="13" />
+                <state relative-caret-position="143">
+                  <caret line="38" column="49" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
                   <folding>
                     <element signature="n#style#0;n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                   </folding>
@@ -109,6 +94,7 @@
       <find>za</find>
       <find>avatar</find>
       <find>collection</find>
+      <find>chat-body</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -121,10 +107,10 @@
         <option value="$PROJECT_DIR$/mystyle.css" />
         <option value="$PROJECT_DIR$/css/mystyle.css" />
         <option value="$PROJECT_DIR$/js/myjs.js" />
-        <option value="$PROJECT_DIR$/login.html" />
-        <option value="$PROJECT_DIR$/chat.html" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/chat.html" />
         <option value="$PROJECT_DIR$/css/mystyle.scss" />
+        <option value="$PROJECT_DIR$/login.html" />
       </list>
     </option>
   </component>
@@ -237,18 +223,33 @@
       <workItem from="1552071256274" duration="543000" />
       <workItem from="1552071821502" duration="890000" />
       <workItem from="1552277927585" duration="1332000" />
-      <workItem from="1552279416765" duration="22483000" />
+      <workItem from="1552279416765" duration="23788000" />
     </task>
+    <task id="LOCAL-00001" summary="done the prototype">
+      <created>1552301977596</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1552301977597</updated>
+    </task>
+    <task id="LOCAL-00002" summary="finished">
+      <created>1552303154468</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1552303154468</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25248000" />
+    <option name="totallyTimeSpent" value="26553000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1177" y="0" width="1389" height="1407" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11612426" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11612426" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -271,6 +272,11 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="done the prototype" />
+    <MESSAGE value="finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/css/mystyle.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -289,43 +295,43 @@
     <entry file="file://$PROJECT_DIR$/img/sam.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="57" column="4" selection-start-line="57" selection-start-column="4" selection-end-line="64" selection-end-column="13" />
-          <folding>
-            <element signature="n#style#0;n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/chat.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="57" column="31" lean-forward="true" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="64" />
+        <state relative-caret-position="429">
+          <caret line="66" column="14" lean-forward="true" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="72" column="76" lean-forward="true" selection-start-line="72" selection-start-column="76" selection-end-line="72" selection-end-column="76" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#nav#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/mystyle.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="72" column="23" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
+        <state relative-caret-position="174">
+          <caret line="53" column="25" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="22" column="38" lean-forward="true" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#nav#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="38" column="49" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
+          <folding>
+            <element signature="n#style#0;n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
