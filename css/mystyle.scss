@@ -2,6 +2,8 @@
 $materialize-green: #00c853;
 $materialize-light-green: #00e676;
 
+
+
 /*Universal css settings*/
 html, body {
   height: 100%;
@@ -206,7 +208,7 @@ nav {
           display: inline;
 
 
-          &.col.s3 {
+          &.col.s2 {
             padding: 10px;
 
             button {

@@ -6,3 +6,5 @@ document.addEventListener('DOMContentLoaded', function() {
 $("#reset").on("click", function() {
   $('label').removeClass('active');
 });
+
+

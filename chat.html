@@ -18,7 +18,7 @@
     <header>
         <nav>
             <div class="nav-wrapper  green accent-4">
-                <a href="./index.html" data-target="mobile-demo" class="sidenav-trigger left">
+                <a href="./index.html" data-target="mobile-demo" class="sidenav-trigger show-on-large left">
                     <i class="material-icons">arrow_back</i>
                 </a>
                 <ul class="collection left" id="chat-header">
@@ -32,7 +32,9 @@
                 </ul>
 
                 <a href="#" class="sidenav-trigger right"><i class="material-icons">more_vert</i></a>
-
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#" data-target="mobile-demo"><i class="material-icons">more_vert</i></a></li>
+                </ul>
             </div>
         </nav>
     </header>
@@ -73,10 +75,10 @@
         <div class="footer-copyright">
             <div class="container">
                 <div class="row">
-                    <div class="input-field col s9">
+                    <div class="input-field col s10">
                         <input value="" id="first_name" type="text" class="validate" placeholder="Message">
                     </div>
-                    <div class="input-field col s3 ">
+                    <div class="input-field col s2 ">
                         <button class="waves-effect waves-light btn-small green accent-4"><i
                                 class="material-icons">send</i></button>
                     </div>

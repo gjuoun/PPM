@@ -160,10 +160,10 @@ nav {
   margin: 0;
   display: inline;
 }
-#chat-footer .footer-copyright .container .row .input-field.col.s3 {
+#chat-footer .footer-copyright .container .row .input-field.col.s2 {
   padding: 10px;
 }
-#chat-footer .footer-copyright .container .row .input-field.col.s3 button {
+#chat-footer .footer-copyright .container .row .input-field.col.s2 button {
   width: 80%;
   position: absolute;
   top: 20%;
