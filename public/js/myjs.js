@@ -52,7 +52,7 @@ loginButton.addEventListener('click', async (e) => {
   await firebase.auth().signInWithPopup(provider)
   
   user = getCurrentUser()
-  
+  console.log(user)
   show(mainPage)
   hide(chatPage)
   hide(loginPage)

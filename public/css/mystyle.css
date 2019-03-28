@@ -201,4 +201,12 @@ nav {
   top: 20%;
 }
 
+#search-form {
+  display: none;
+}
+
+#nav-links {
+  display: initial;
+}
+
 /*# sourceMappingURL=mystyle.css.map */
