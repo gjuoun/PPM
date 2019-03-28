@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PPM</title>
+    <link rel="stylesheet" href="css/mystyle.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/5.9.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/5.9.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.9.1/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/5.9.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/5.9.1/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+<!--login page-->
+<div class="container" id="login-container">
+
+    <header>
+        <nav>
+            <div class="nav-wrapper  green accent-4 ">
+                <a href="#!" class="brand-logo center">PPM</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="valign-wrapper" id="login-body">
+        <div class="row">
+            <div class="col s12">
+                <form action="index.html" method="post">
+                    <div class="row center">
+                        <img src="img/logo.png" alt="" width="102" height="102">
+                    </div>
+                    <div class="row center">
+                        <div class="input-field col s12 m12 l12">
+                            <br>
+                        </div>
+                    </div>
+                    <div class="row center">
+                        <div class="input-field col s12 m12 l12">
+                            <button class="waves-effect waves-light btn green accent-4 " type="submit"
+                                    id="button-login"> Login with
+                                google
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- conversation list-->
+<div class="container" id="mainpage-container">
+    <header>
+        <nav>
+            <div class="nav-wrapper  green accent-4">
+
+                <a href="#!" class="brand-logo center">
+                    <span style="font-size: 24px;">PPM</span>
+                </a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large left">
+                    <i class="material-icons">menu</i>
+                </a>
+                <!--<a href="#" class="sidenav-trigger right"><i class="material-icons">more_vert</i></a>-->
+                <!--<a href="#" class="sidenav-trigger right"><i class="material-icons">search</i></a>-->
+
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#"><i class="material-icons">search</i></a></li>
+                    <li><a href="#" data-target="mobile-demo"><i class="material-icons">more_vert</i></a></li>
+                </ul>
+            </div>
+        </nav>
+        <ul class="sidenav scroll scroll1" id="mobile-demo">
+            <div class="row">
+                <div class="col s12 no-padding">
+                    <div class="center green accent-4" id="avatar-container">
+                        <img src="img/logo.png" class="circle" alt="" width="64" height="64" id="siderbar-avatar">
+                        <div class="row">
+                            <div class="col s12 white-text" id="sidebar-displayName">
+                                Jun Guo
+                            </div>
+                            <div class="col s12 white-text" id="sidebar-email">
+                                jn51919@dal.ca
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <li><a href="#"><i class="material-icons">chat_bubble_outline</i>New Chat</a></li>
+            <li><a href="#"><i class="material-icons">group</i>New Group Chat</a></li>
+            <li><a href="#"><i class="material-icons">speaker_notes</i>New Channel</a></li>
+            <div class="divider"></div>
+            <li><a href="#"><i class="material-icons">perm_contact_calendar</i>Contacts</a></li>
+            <li><a href="#"><i class="material-icons">save_alt</i>Saved Messages</a></li>
+            <li><a href="#"><i class="material-icons">call</i>Calls</a></li>
+            <li><a href="#"><i class="material-icons">person_add</i>Invite Friends</a></li>
+            <li><a href="#"><i class="material-icons">settings</i>Settings</a></li>
+            <li><a href="#"><i class="material-icons">question_answer</i>FAQ</a></li>
+            <li><a href="#"><i class="material-icons">power_settings_new</i>Sign out</a></li>
+        </ul>
+    </header>
+
+    <div class="row" class="scroll scroll1">
+        <ul class="collection">
+            <li class="collection-item avatar">
+                <a href="chat.html" id="a-test">
+                    <img src="img/Emily.png" alt="" class="circle">
+                    <span class="title grey-text text-darken-2">Emily</span>
+                    <p class="grey-text ">Did you hear anything about John?</p>
+                    <a href="#!" class="secondary-content preview-count"> 1</a>
+                </a>
+            </li>
+            <li class="collection-item avatar">
+                <a href="chat.html">
+                    <img src="img/John.png" alt="" class="circle">
+                    <span class="title grey-text text-darken-2">John</span>
+                    <p class="grey-text ">I'm ready to go</p>
+                    <a href="#!" class="secondary-content preview-count">3</a>
+                </a>
+            </li>
+            <li class="collection-item avatar">
+                <a href="chat.html">
+                    <img src="img/Sam.png" alt="" class="circle">
+                    <span class="title grey-text text-darken-2">Sam</span>
+                    <p class="grey-text ">Good idea!</p>
+                    <a href="#!" class="secondary-content checked-message">
+                        <i class="material-icons double-check">check</i>
+                        <i class="material-icons">check</i>
+                    </a>
+                </a>
+            </li>
+            <li class="collection-item avatar">
+                <a href="chat.html">
+                    <img src="img/weather.png" alt="" class="circle">
+                    <span class="title grey-text text-darken-2">Weather Channel</span>
+                    <p class="grey-text ">Halifax(CA) will be -1&#8451; to -9&#8451;</p>
+                    <a href="#!" class="secondary-content checked-message">
+                        <i class="material-icons">check</i>
+                    </a>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+<!--message page-->
+<div class="container" id="chat-container">
+    <header>
+        <nav>
+            <div class="nav-wrapper  green accent-4">
+                <a href="index.html" data-target="mobile-demo" class="sidenav-trigger show-on-large left">
+                    <i class="material-icons">arrow_back</i>
+                </a>
+                <ul class="collection left" id="chat-header">
+                    <li class="collection-item avatar">
+                        <a href="index.html">
+                            <img src="img/Emily.png" alt="" class="circle">
+                            <span class="title white-text">Emily</span>
+                            <p class="grey-text text-lighten-2">Last seen at 6 mins ago</p>
+                        </a>
+                    </li>
+                </ul>
+
+                <a href="#" class="sidenav-trigger right"><i class="material-icons">more_vert</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#" data-target="mobile-demo"><i class="material-icons">more_vert</i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div id="chat-body" class="scroll scroll2">
+        <div class="row left">
+            <img src="img/Emily.png" alt="" class="circle">
+            <div class="card-panel white">
+                <span class="">Hey How's going?</span>
+            </div>
+        </div>
+
+        <div class="row right">
+            <div class="card-panel green accent-1">
+                <span>Not bad</span>
+            </div>
+            <img src="img/Sam.png" alt="" class="circle">
+        </div>
+
+        <div class="row left">
+            <img src="img/Emily.png" alt="" class="circle">
+            <div class="card-panel white">
+                <span class="">Did you hear anything about John?</span>
+            </div>
+        </div>
+
+        <div class="row right">
+            <div class="card-panel green accent-1">
+                <span>I met him yesterday at his place</span>
+            </div>
+            <img src="img/Sam.png" alt="" class="circle">
+        </div>
+
+        <div class="row left">
+            <img src="img/Emily.png" alt="" class="circle">
+            <div class="card-panel white">
+                <span class="">Do you have his number?</span>
+            </div>
+        </div>
+
+        <div class="row right">
+            <div class="card-panel green accent-1">
+                <span>Give me a sec..</span>
+            </div>
+            <img src="img/Sam.png" alt="" class="circle">
+        </div>
+
+        <div class="row left">
+            <img src="img/Emily.png" alt="" class="circle">
+            <div class="card-panel white">
+                <span class="">okay</span>
+            </div>
+        </div>
+
+        <div class="row right">
+            <div class="card-panel green accent-1">
+                <span>I got his number: 902xxxxxxx</span>
+            </div>
+            <img src="img/Sam.png" alt="" class="circle">
+        </div>
+
+        <div class="row left">
+            <img src="img/Emily.png" alt="" class="circle">
+            <div class="card-panel white">
+                <span class="">Good, thank you!</span>
+            </div>
+        </div>
+
+        <div class="row right">
+            <div class="card-panel green accent-1">
+                <span>np, XD</span>
+            </div>
+            <img src="img/Sam.png" alt="" class="circle">
+        </div>
+
+    </div>
+
+
+    <footer id="chat-footer"
+            class="page-footer " style="padding-top: 0px;">
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="input-field col s10">
+                        <input value="" id="first_name" type="text" class="validate" placeholder="Message">
+                    </div>
+                    <div class="input-field col s2 ">
+                        <button class="waves-effect waves-light btn-small green accent-4"><i
+                                class="material-icons">send</i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="js/myjs.js"></script>
+</body>
+</html>
