@@ -115,9 +115,9 @@
     </header>
 
     <div class="row" class="scroll scroll1">
-        <ul class="collection">
+        <ul class="collection" id="conversation-list">
             <li class="collection-item avatar">
-                <a href="chat.html" id="a-test">
+                <a href="chat.html" >
                     <img src="img/Emily.png" alt="" class="circle">
                     <span class="title grey-text text-darken-2">Emily</span>
                     <p class="grey-text ">Did you hear anything about John?</p>
@@ -275,6 +275,38 @@
         </div>
     </footer>
 </div>
+
+
+<!--templates-->
+<conversation-template style="display: none">
+    <li class="collection-item avatar">
+        <a href="chat.html" >
+            <img src="img/Emily.png" alt="" class="circle">
+            <span class="title grey-text text-darken-2">Emily</span>
+            <p class="grey-text ">Did you hear anything about John?</p>
+            <a href="#!" class="secondary-content preview-count"> 1</a>
+        </a>
+    </li>
+</conversation-template>
+
+<message-left-template style="display:none">
+    <div class="row right">
+        <div class="card-panel green accent-1">
+            <span>I met him yesterday at his place</span>
+        </div>
+        <img src="img/Sam.png" alt="" class="circle">
+    </div>
+</message-left-template>
+
+<message-right-template style="display:none">
+    <div class="row right">
+        <div class="card-panel green accent-1">
+            <span>np, XD</span>
+        </div>
+        <img src="img/Sam.png" alt="" class="circle">
+    </div>
+</message-right-template>
+
 
 
 <!-- Compiled and minified JavaScript -->
