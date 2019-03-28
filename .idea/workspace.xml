@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b7a6c6b-1835-46c8-9f9a-abfc5d35134c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/mystyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/mystyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/mystyle.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/mystyle.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Emily.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/Emily.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/John.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/John.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Sam.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/Sam.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/girl.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/girl.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/weather.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/weather.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/myjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/myjs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/chat.html" afterDir="false" />
-    </list>
+    <list default="true" id="6b7a6c6b-1835-46c8-9f9a-abfc5d35134c" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -32,7 +15,7 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/index_bk.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="420">
@@ -41,11 +24,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="672">
-                  <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
+                <state relative-caret-position="840">
+                  <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
                   <folding>
                     <element signature="n#style#0;n#footer#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                   </folding>
@@ -142,6 +125,7 @@
       <find>chat-body</find>
       <find>sidenav</find>
       <find>login</find>
+      <find>circle</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -305,7 +289,7 @@
       <workItem from="1553484714147" duration="3317000" />
       <workItem from="1553657427593" duration="6546000" />
       <workItem from="1553740030929" duration="604000" />
-      <workItem from="1553741174864" duration="6226000" />
+      <workItem from="1553741174864" duration="6906000" />
     </task>
     <task id="LOCAL-00001" summary="done the prototype">
       <created>1552301977596</created>
@@ -349,17 +333,24 @@
       <option name="project" value="LOCAL" />
       <updated>1553489339401</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="integrated with Firebase&#10;removed the login page element&#10;now using google auth login">
+      <created>1553748846178</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1553748846178</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49074000" />
+    <option name="totallyTimeSpent" value="49754000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="3086" height="1702" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.07871433" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.07871433" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -372,7 +363,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Quokka" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3280255" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3280255" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -390,7 +381,8 @@
     <MESSAGE value="fix bugs" />
     <MESSAGE value="add drag to sidenav" />
     <MESSAGE value="test on firebase integration" />
-    <option name="LAST_COMMIT_MESSAGE" value="test on firebase integration" />
+    <MESSAGE value="integrated with Firebase&#10;removed the login page element&#10;now using google auth login" />
+    <option name="LAST_COMMIT_MESSAGE" value="integrated with Firebase&#10;removed the login page element&#10;now using google auth login" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/css/mystyle.css">
@@ -461,13 +453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index_bk.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="30" column="100" lean-forward="true" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="602">
@@ -484,11 +469,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
+        <state relative-caret-position="840">
+          <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
           <folding>
             <element signature="n#style#0;n#footer#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index_bk.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="30" column="100" lean-forward="true" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="100" />
         </state>
       </provider>
     </entry>
