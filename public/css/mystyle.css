@@ -149,6 +149,13 @@ nav {
   display: inline;
 }
 
+#button-chat-back {
+  text-align: center;
+}
+#button-chat-back i {
+  width: 50px;
+}
+
 #chat-header {
   margin: 0;
   height: 100%;

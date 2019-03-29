@@ -3,7 +3,6 @@ $materialize-green: #00c853;
 $materialize-light-green: #00e676;
 
 
-
 /*Universal css settings*/
 html, body {
   height: 100%;
@@ -58,7 +57,6 @@ footer {
 }
 
 
-
 nav {
   line-height: 50px !important;
 }
@@ -84,7 +82,7 @@ nav {
       background: #f9f9f9;
       min-height: 50px !important;
 
-      img{
+      img {
         background: #fff;
       }
     }
@@ -94,6 +92,7 @@ nav {
     }
   }
 }
+
 //////////////////////////////////////////////////////////////
 
 // main page
@@ -186,6 +185,14 @@ nav {
 
 }
 
+#button-chat-back {
+  text-align: center;
+
+  i{
+    width: 50px;
+  }
+}
+
 #chat-header {
   margin: 0;
   height: 100%;
@@ -226,7 +233,7 @@ nav {
       height: 51px;
       width: 100%;
       padding: 0 5px;
-      margin:0;
+      margin: 0;
 
       .row {
         margin-bottom: 0;
@@ -258,10 +265,10 @@ nav {
 }
 
 
-#search-form{
+#search-form {
   display: none;
 }
 
-#nav-links{
+#nav-links {
   display: initial;
 }
