@@ -27,8 +27,6 @@ $('#button-login').addEventListener('click', async (e) => {
   e.preventDefault()
   
   await action.signIn()
-  
-  
 })
 
 $('#button-chat-back').addEventListener('click', (e) => {
@@ -48,6 +46,8 @@ $('#button-send').addEventListener('click', async (e) => {
   if (msg)
     action.sendMessage(msg)
   inputEL.value = ''
+  inputEL.focus()
+  
 })
 
 $('#chat-input').addEventListener('keyup', async (e) => {
@@ -59,6 +59,7 @@ $('#chat-input').addEventListener('keyup', async (e) => {
     if (msg)
       action.sendMessage(msg)
     inputEL.value = ''
+    inputEL.focus()
   }
 })
 

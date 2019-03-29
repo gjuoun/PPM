@@ -31,6 +31,7 @@ function switchToMainPage() {
   show(mainPage)
   hide(chatPage)
   hide(loginPage)
+  // unsubscribe the snapshot listener
   if (chatListener)
     chatListener()
 }
@@ -39,6 +40,8 @@ function switchToChatPage() {
   show(chatPage)
   hide(mainPage)
   hide(loginPage)
+  $('#chat-body').innerHTML = ''
+  $('#chat-input').focus()
 }
 
 
@@ -76,30 +79,25 @@ function listenToRealTimeUpdate(conversation) {
   let conversationRef = mydb.collection('conversations')
     .doc(conversation.conId).collection('messages')
   
-  chatListener = conversationRef.onSnapshot((snapshot) => {
+  chatListener = conversationRef.orderBy('timestamp').onSnapshot((snapshot) => {
     snapshot.docChanges().forEach((change) => {
       if (change.type === 'added') {
         let newmsg = change.doc.data()
-        if (!currentConversation.messages)
+        if (!currentConversation.messages) {
           currentConversation.messages = []
+          
+        }
         currentConversation.messages.push(newmsg)
         console.log('new message', newmsg)
-        displayMessages(loggedInUser, currentConversation)
+        displayMessage(newmsg)
+        scrollToChatBottom()
       }
     })
   })
+  
+  currentConversation.messages = orderMessagesByTime(currentConversation.messages)
 }
 
-function displayMessages(user, conversation) {
-  $('#chat-body').innerHTML = ''
-  
-  let messages = orderMessagesByTime(conversation.messages)
-  for (let msg of messages) {
-    displayMessage(msg)
-    
-  }
-  scrollToChatBottom()
-}
 
 function orderMessagesByTime(messages) {
   return messages.sort((a, b) => a.timestamp.seconds - b.timestamp.seconds)
@@ -116,6 +114,7 @@ function displayMessage(msg) {
   template.querySelector('img')
     .setAttribute('src', msg.photoURL)
   template.querySelector('span').textContent = msg.content
+  template.id = msg.msgId
   // append it to conversation list
   $('#chat-body').appendChild(template)
 }
@@ -164,8 +163,6 @@ async function signIn() {
   
   if (googleUser && loggedInUser) {
     loadMainPage(loggedInUser)
-    // await db.getConversationList(user)
-    // user.activeConversations.push('bEcPOope6KVoeHg8Ivmz')
     await db.updateUser(loggedInUser)
   } else if (googleUser && !loggedInUser) {
     await db.createUser(googleUser)
@@ -176,8 +173,6 @@ async function signIn() {
 
 async function signOut() {
   await firebase.auth().signOut()
-  // hide($('.sidenav-overlay'))
-  // loadLoginPage()
   window.location.href = './'
 }
 
