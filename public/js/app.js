@@ -4,7 +4,7 @@ import * as db from './db.js'
 import * as action from './action.js'
 
 // global variables
-let app, user, conversationList, currentConversation
+let app
 
 
 const whenDocumentIsReady = (callback) => {
@@ -27,19 +27,7 @@ $('#button-login').addEventListener('click', async (e) => {
   e.preventDefault()
   
   await action.signIn()
-  let googleUser = await db.getCurrentGoogleUser()
-  user = await db.getUserByUid(googleUser.uid)
   
-  if (googleUser && user) {
-    action.loadMainPage(user)
-    // await db.getConversationList(user)
-    // user.activeConversations.push('bEcPOope6KVoeHg8Ivmz')
-    await db.updateUser(user)
-  } else if (googleUser && !user) {
-    await db.createUser(googleUser)
-    user = await db.getUserByUid(googleUser.uid)
-    action.loadMainPage(user)
-  }
   
 })
 
@@ -49,9 +37,30 @@ $('#button-chat-back').addEventListener('click', (e) => {
 })
 
 $('#button-logout').addEventListener('click', async (e) => {
-  // console.log(e)
-  user = null
+  
   await action.signOut()
 })
+
+
+$('#button-send').addEventListener('click', async (e) => {
+  let inputEL = $('#chat-input')
+  let msg = inputEL.value.trim()
+  if (msg)
+    action.sendMessage(msg)
+  inputEL.value = ''
+})
+
+$('#chat-input').addEventListener('keyup', async (e) => {
+  let inputEL = $('#chat-input')
+  
+  if (e.keyCode === 13) {
+    e.preventDefault()
+    let msg = inputEL.value.trim()
+    if (msg)
+      action.sendMessage(msg)
+    inputEL.value = ''
+  }
+})
+
 
 

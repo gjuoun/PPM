@@ -51,13 +51,13 @@ async function getConversationList(user) {
     // load messages
     if (result.exists) {
       result = await result.data()
-      result.messages = []
+      // result.messages = []
       
-      let {docs} = await conversationRef.collection('messages').get()
+      // let {docs} = await conversationRef.collection('messages').get()
       
       // push messages to conversationList
-      for (let doc of docs)
-        result.messages.push(doc.data())
+      // for (let doc of docs)
+      //   result.messages.push(doc.data())
       
       conversations.push(result)
     }
@@ -75,6 +75,24 @@ async function getMessages(conversationId) {
 
 }
 
+async function postMessage(msg, user, conId) {
+  let messagesRef = db.collection('conversations')
+    .doc(conId).collection('messages')
+  let now = parseInt((new Date().getTime()) / 1000)
+  let firestoreTimestamp = new firebase.firestore.Timestamp(now, 0)
+  let result = await messagesRef.add({
+    content: msg,
+    sender: user.uid,
+    photoURL: user.photoURL,
+    timestamp: firestoreTimestamp
+  })
+  // update msgId in the msg document
+  let messageDoc = await messagesRef.doc(result.id).get()
+  let message = await messageDoc.data()
+  message.msgId = result.id
+  await messagesRef.doc(result.id).set(message)
+}
+
 
 export {
   getCurrentGoogleUser,
@@ -83,5 +101,6 @@ export {
   updateUser,
   getConversationList,
   getConversation,
-  getMessages
+  getMessages,
+  postMessage
 }

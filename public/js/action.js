@@ -1,6 +1,8 @@
 import {$} from './helper.js'
 import * as db from './db.js'
 
+let loggedInUser = null, currentConversation = '', chatListener = null
+
 // global elements
 const loginPage = $('#login-container')
 const mainPage = $('#mainpage-container')
@@ -29,6 +31,8 @@ function switchToMainPage() {
   show(mainPage)
   hide(chatPage)
   hide(loginPage)
+  if (chatListener)
+    chatListener()
 }
 
 function switchToChatPage() {
@@ -57,18 +61,90 @@ function loadMainPage(user) {
   displayConversationList(user)
 }
 
-function loadChatPage(user, conversationSetting, conversation) {
+async function loadChatPage(user, conversation) {
+  let conversationSetting = conversation.members.find(member => member.uid === user.uid)
+  currentConversation = conversation
+  currentConversation.messages = []
   switchToChatPage()
   updateChatHeader(conversationSetting)
-  displayMessages(user, conversation)
-  // console.log(user, conversationSetting, conversation)
+  listenToRealTimeUpdate(conversation)
+}
+
+
+function listenToRealTimeUpdate(conversation) {
+  let mydb = firebase.firestore()
+  let conversationRef = mydb.collection('conversations')
+    .doc(conversation.conId).collection('messages')
+  
+  chatListener = conversationRef.onSnapshot((snapshot) => {
+    snapshot.docChanges().forEach((change) => {
+      if (change.type === 'added') {
+        let newmsg = change.doc.data()
+        if (!currentConversation.messages)
+          currentConversation.messages = []
+        currentConversation.messages.push(newmsg)
+        console.log('new message', newmsg)
+        displayMessages(loggedInUser, currentConversation)
+      }
+    })
+  })
 }
 
 function displayMessages(user, conversation) {
-  console.log(user, conversation)
+  $('#chat-body').innerHTML = ''
+  
+  let messages = orderMessagesByTime(conversation.messages)
+  for (let msg of messages) {
+    displayMessage(msg)
+    
+  }
   scrollToChatBottom()
 }
 
+function orderMessagesByTime(messages) {
+  return messages.sort((a, b) => a.timestamp.seconds - b.timestamp.seconds)
+}
+
+function displayMessage(msg) {
+  // console.log('msg', msg.sender)
+  // console.log('loggedInUser', loggedInUser.uid)
+  let template
+  if (msg.sender === loggedInUser.uid)
+    template = $('message-right-template>div').cloneNode(true)
+  else
+    template = $('message-left-template>div').cloneNode(true)
+  template.querySelector('img')
+    .setAttribute('src', msg.photoURL)
+  template.querySelector('span').textContent = msg.content
+  // append it to conversation list
+  $('#chat-body').appendChild(template)
+}
+
+function displayOwnMessage(user, msg) {
+  // console.log('msg', msg)
+  // let template = $('message-right-template>div').cloneNode(true)
+  // template.querySelector('img')
+  //   .setAttribute('src', user.photoURL)
+  // template.querySelector('span').textContent = msg.content
+  // // append it to conversation list
+  // $('#chat-body').appendChild(template)
+}
+
+function displayOthersMessage(msg) {
+  // let {sender, sender} = msg
+  // let template = $('message-left-template>div').cloneNode(true)
+  // template.querySelector('img')
+  //   .setAttribute('src', senderUser.photoURL)
+  // template.querySelector('span').textContent = msg.content
+  // append it to conversation list
+  // $('#chat-body').appendChild(template)
+}
+
+
+function sendMessage(msg) {
+  db.postMessage(msg, loggedInUser, currentConversation.conId)
+  // loadChatPage(loggedInUser, currentConversation)
+}
 
 function updateChatHeader(conversationSetting) {
   let {conversationTitle, conversationIcon} = conversationSetting
@@ -81,7 +157,21 @@ function updateChatHeader(conversationSetting) {
 
 async function signIn() {
   const provider = new firebase.auth.GoogleAuthProvider()
-  return firebase.auth().signInWithPopup(provider)
+  await firebase.auth().signInWithPopup(provider)
+  
+  let googleUser = await db.getCurrentGoogleUser()
+  loggedInUser = await db.getUserByUid(googleUser.uid)
+  
+  if (googleUser && loggedInUser) {
+    loadMainPage(loggedInUser)
+    // await db.getConversationList(user)
+    // user.activeConversations.push('bEcPOope6KVoeHg8Ivmz')
+    await db.updateUser(loggedInUser)
+  } else if (googleUser && !loggedInUser) {
+    await db.createUser(googleUser)
+    loggedInUser = await db.getUserByUid(googleUser.uid)
+    loadMainPage(loggedInUser)
+  }
 }
 
 async function signOut() {
@@ -101,10 +191,8 @@ async function displayConversationList(user) {
 }
 
 async function displayConversation(user, conversation) {
-  let {members, conId, messages} = conversation
-  let conversationSetting = members.find((member) => {
-    return member.uid === user.uid
-  })
+  let {members, conId} = conversation
+  let conversationSetting = members.find(member => member.uid === user.uid)
   
   let {conversationIcon, conversationTitle} = conversationSetting
   
@@ -115,7 +203,7 @@ async function displayConversation(user, conversation) {
   template.querySelector('p').textContent = 'How are you?'
   template.id = conId
   template.addEventListener('click', (e) => {
-    loadChatPage(user, conversationSetting, conversation)
+    loadChatPage(user, conversation)
   })
   // append it to conversation list
   $('#conversation-list').appendChild(template)
@@ -127,5 +215,6 @@ export {
   loadMainPage,
   loadChatPage,
   loadLoginPage,
-  switchToMainPage
+  switchToMainPage,
+  sendMessage
 }
