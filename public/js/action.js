@@ -119,25 +119,6 @@ function displayMessage(msg) {
   $('#chat-body').appendChild(template)
 }
 
-function displayOwnMessage(user, msg) {
-  // console.log('msg', msg)
-  // let template = $('message-right-template>div').cloneNode(true)
-  // template.querySelector('img')
-  //   .setAttribute('src', user.photoURL)
-  // template.querySelector('span').textContent = msg.content
-  // // append it to conversation list
-  // $('#chat-body').appendChild(template)
-}
-
-function displayOthersMessage(msg) {
-  // let {sender, sender} = msg
-  // let template = $('message-left-template>div').cloneNode(true)
-  // template.querySelector('img')
-  //   .setAttribute('src', senderUser.photoURL)
-  // template.querySelector('span').textContent = msg.content
-  // append it to conversation list
-  // $('#chat-body').appendChild(template)
-}
 
 
 function sendMessage(msg) {

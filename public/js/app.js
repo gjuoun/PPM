@@ -1,6 +1,4 @@
 import {$} from './helper.js'
-import User from './model.js'
-import * as db from './db.js'
 import * as action from './action.js'
 
 // global variables
@@ -8,8 +6,8 @@ let app
 
 // custom JQuery like syntax initializer
 Element.prototype.on = Element.prototype.addEventListener
-// Element.prototype.css = Element.prototype.style.css()
 Document.prototype.ready = (cb) => document.addEventListener('DOMContentLoaded', cb)
+
 
 $(document).ready(() => {
   // activate side nav
@@ -22,24 +20,24 @@ $(document).ready(() => {
 })
 
 
-$('#button-login').addEventListener('click', async (e) => {
+$('#button-login').on('click', async (e) => {
   e.preventDefault()
   
   await action.signIn()
 })
 
-$('#button-chat-back').addEventListener('click', (e) => {
+$('#button-chat-back').on('click', (e) => {
   // console.log(e)
   action.switchToMainPage()
 })
 
-$('#button-logout').addEventListener('click', async (e) => {
+$('#button-logout').on('click', async (e) => {
   
   await action.signOut()
 })
 
 
-$('#button-send').addEventListener('click', async (e) => {
+$('#button-send').on('click', async (e) => {
   let inputEL = $('#chat-input')
   let msg = inputEL.value.trim()
   if (msg)
@@ -49,7 +47,7 @@ $('#button-send').addEventListener('click', async (e) => {
   
 })
 
-$('#chat-input').addEventListener('keyup', async (e) => {
+$('#chat-input').on('keyup', async (e) => {
   let inputEL = $('#chat-input')
   
   if (e.keyCode === 13) {
