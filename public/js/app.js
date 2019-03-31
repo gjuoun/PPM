@@ -6,13 +6,12 @@ import * as action from './action.js'
 // global variables
 let app
 
+// custom JQuery like syntax initializer
+Element.prototype.on = Element.prototype.addEventListener
+// Element.prototype.css = Element.prototype.style.css()
+Document.prototype.ready = (cb) => document.addEventListener('DOMContentLoaded', cb)
 
-const whenDocumentIsReady = (callback) => {
-  document.addEventListener('DOMContentLoaded', callback)
-}
-
-
-whenDocumentIsReady(async () => {
+$(document).ready(() => {
   // activate side nav
   var elems = $('.sidenav')
   var instances = M.Sidenav.init(elems, {edge: 'left', draggable: true})
