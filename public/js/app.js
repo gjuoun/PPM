@@ -11,8 +11,11 @@ Document.prototype.ready = (cb) => document.addEventListener('DOMContentLoaded',
 
 $(document).ready(() => {
   // activate side nav
-  var elems = $('.sidenav')
-  var instances = M.Sidenav.init(elems, {edge: 'left', draggable: true})
+  var sidenavEls = $('.sidenav')
+  var sidenavInstances = M.Sidenav.init(sidenavEls, {edge: 'left', draggable: true})
+  
+  var modalEls = document.querySelectorAll('.modal')
+  var modalInstances = M.Modal.init(modalEls, {})
   
   app = firebase.app()
   action.loadLoginPage()
@@ -61,4 +64,14 @@ $('#chat-input').on('keyup', async (e) => {
 })
 
 
+$('#sidenav-close').on('click', (e) => {
+  action.closeSidenav()
+})
 
+$('#button-newchat').on('click', async (e) => {
+  await action.displayContactsList()
+})
+
+$('#button-contacts').on('click', async (e) => {
+  await action.displayContactsList()
+})

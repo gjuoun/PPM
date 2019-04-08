@@ -8,9 +8,20 @@ async function getCurrentGoogleUser() {
 }
 
 async function updateUser(user) {
-  return db.collection('users').doc(user.uid).set(user)
+  return await db.collection('users').doc(user.uid).set(user)
 }
 
+async function getConversations() {
+  let result = []
+  let docs = await db.collection('conversations').get()
+  if (!docs.empty) {
+    docs.forEach((doc) => {
+      result.push(doc.data())
+    })
+    return Promise.all(result)
+  }
+  return null
+}
 
 // return uid :str
 async function createUser(googleUser) {
@@ -28,6 +39,43 @@ async function createUser(googleUser) {
     contacts: []
   }
   return db.collection('users').doc(uid).set(newuser)
+}
+
+async function createNewConversation(currentUser, targetUser) {
+  
+  let members = [
+    {
+      conversationIcon: targetUser.photoURL,
+      conversationTitle: targetUser.displayName,
+      uid: currentUser.uid
+    },
+    {
+      conversationIcon: currentUser.photoURL,
+      conversationTitle: currentUser.displayName,
+      uid: targetUser.uid
+    }
+  ]
+  
+  let newConRef = db.collection('conversations').doc()
+  
+  let conversation = {
+    conId: newConRef.id,
+    members: members,
+    type: 'chat'
+  }
+  await newConRef.set(conversation)
+  let newmessRef = newConRef.collection('messages').doc()
+  
+  let newMessage = {
+    content: 'Let\'s chat',
+    msgId: newmessRef.id,
+    photoURL: currentUser.photoURL,
+    sender: currentUser.uid,
+    timestamp: getTimestamp()
+  }
+  // set welcom message
+  await newmessRef.set(newMessage)
+  return await newConRef.get().then((doc) => doc.data())
 }
 
 async function getUserByUid(uid) {
@@ -93,6 +141,11 @@ async function postMessage(msg, user, conId) {
   await messagesRef.doc(result.id).set(message)
 }
 
+function getTimestamp() {
+  let now = parseInt((new Date().getTime()) / 1000)
+  return new firebase.firestore.Timestamp(now, 0)
+  
+}
 
 export {
   getCurrentGoogleUser,
@@ -102,5 +155,7 @@ export {
   getConversationList,
   getConversation,
   getMessages,
-  postMessage
+  postMessage,
+  getConversations,
+  createNewConversation
 }

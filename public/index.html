@@ -24,6 +24,22 @@
 </head>
 <body>
 
+<!--modal template-->
+<div id="modal-newchat" class="modal">
+    <div class="modal-content">
+        <div class="row">
+            <h4>Contacts</h4>
+        </div>
+        <div class="divider"></div>
+        <ul class="collection" id="contacts-list">
+        </ul>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+    </div>
+</div>
+
+
 <!--login page-->
 <div class="container" id="login-container">
 
@@ -100,11 +116,14 @@
                 </div>
 
             </div>
-            <li><a href="#"><i class="material-icons">chat_bubble_outline</i>New Chat</a></li>
+            <li><a href="#" id="button-newchat" class="modal-trigger" data-target="modal-newchat">
+                <i class="material-icons">chat_bubble_outline</i>New Chat</a>
+            </li>
             <li><a href="#"><i class="material-icons">group</i>New Group Chat</a></li>
             <li><a href="#"><i class="material-icons">speaker_notes</i>New Channel</a></li>
+<!--            <li><a href="#" id="sidenav-close"><i class="material-icons">speaker_notes</i>Close Sidenav</a></li>-->
             <div class="divider"></div>
-            <li><a href="#"><i class="material-icons">perm_contact_calendar</i>Contacts</a></li>
+            <li><a href="#" id="button-contacts"><i class="material-icons">perm_contact_calendar</i>Contacts</a></li>
             <li><a href="#"><i class="material-icons">save_alt</i>Saved Messages</a></li>
             <li><a href="#"><i class="material-icons">call</i>Calls</a></li>
             <li><a href="#"><i class="material-icons">person_add</i>Invite Friends</a></li>
@@ -118,43 +137,6 @@
 
     <div class="row" class="scroll scroll1">
         <ul class="collection" id="conversation-list">
-            <!--            <li class="collection-item avatar">-->
-            <!--                <a href="chat.html" >-->
-            <!--                    <img src="img/Emily.png" alt="" class="circle">-->
-            <!--                    <span class="title grey-text text-darken-2">Emily</span>-->
-            <!--                    <p class="grey-text ">Did you hear anything about John?</p>-->
-            <!--                    <a href="#!" class="secondary-content preview-count"> 1</a>-->
-            <!--                </a>-->
-            <!--            </li>-->
-            <!--            <li class="collection-item avatar">-->
-            <!--                <a href="chat.html">-->
-            <!--                    <img src="img/John.png" alt="" class="circle">-->
-            <!--                    <span class="title grey-text text-darken-2">John</span>-->
-            <!--                    <p class="grey-text ">I'm ready to go</p>-->
-            <!--                    <a href="#!" class="secondary-content preview-count">3</a>-->
-            <!--                </a>-->
-            <!--            </li>-->
-            <!--            <li class="collection-item avatar">-->
-            <!--                <a href="chat.html">-->
-            <!--                    <img src="img/Sam.png" alt="" class="circle">-->
-            <!--                    <span class="title grey-text text-darken-2">Sam</span>-->
-            <!--                    <p class="grey-text ">Good idea!</p>-->
-            <!--                    <a href="#!" class="secondary-content checked-message">-->
-            <!--                        <i class="material-icons double-check">check</i>-->
-            <!--                        <i class="material-icons">check</i>-->
-            <!--                    </a>-->
-            <!--                </a>-->
-            <!--            </li>-->
-            <!--            <li class="collection-item avatar">-->
-            <!--                <a href="chat.html">-->
-            <!--                    <img src="img/weather.png" alt="" class="circle">-->
-            <!--                    <span class="title grey-text text-darken-2">Weather Channel</span>-->
-            <!--                    <p class="grey-text ">Halifax(CA) will be -1&#8451; to -9&#8451;</p>-->
-            <!--                    <a href="#!" class="secondary-content checked-message">-->
-            <!--                        <i class="material-icons">check</i>-->
-            <!--                    </a>-->
-            <!--                </a>-->
-            <!--            </li>-->
 
         </ul>
     </div>
@@ -186,20 +168,8 @@
         </nav>
     </header>
 
+    <!--    chat page-->
     <div id="chat-body" class="scroll scroll2">
-        <!--        <div class="row left">-->
-        <!--            <img src="img/Emily.png" alt="" class="circle">-->
-        <!--            <div class="card-panel white">-->
-        <!--                <span class="">Hey How's going?</span>-->
-        <!--            </div>-->
-        <!--        </div>-->
-
-        <!--        <div class="row right">-->
-        <!--            <div class="card-panel green accent-1">-->
-        <!--                <span>Not bad</span>-->
-        <!--            </div>-->
-        <!--            <img src="img/Sam.png" alt="" class="circle">-->
-        <!--        </div>-->
 
     </div>
 
@@ -255,6 +225,14 @@
         <img src="img/Sam.png" alt="" class="circle">
     </div>
 </message-right-template>
+
+<contact-template style="display:none">
+    <li class="collection-item avatar modal-trigger" data-target="modal-newchat">
+        <img src="" alt="" class="circle">
+        <span class="title ">Title</span>
+        <p class="grey-text">First Line <br>
+    </li>
+</contact-template>
 
 
 <!-- Compiled and minified JavaScript -->

@@ -1,7 +1,8 @@
 import {$} from './helper.js'
 import * as db from './db.js'
 
-let loggedInUser = null, currentConversation = '', chatListener = null
+let loggedInUser = null, currentConversation = ''
+let chatListener = null, conversationListListener = null
 
 // global elements
 const loginPage = $('#login-container')
@@ -19,6 +20,18 @@ const show = (el) => {
 }
 const hide = (el) => {
   el.style.display = 'none'
+}
+
+function closeSidenav() {
+  let sidenavEl = $('.sidenav')
+  let instance = M.Sidenav.getInstance(sidenavEl)
+  instance.close()
+}
+
+function closeModal() {
+  let modalEl = $('.modal')
+  let instance = M.Modal.getInstance(modalEl)
+  instance.close()
 }
 
 function switchToLoginPage() {
@@ -45,7 +58,7 @@ function switchToChatPage() {
 }
 
 
-function updateSiderBarInformation(user) {
+function updateSidernavInformation(user) {
   // console.log('siderbar', user)
   $('#sidebar-displayName').textContent = user.displayName
   $('#sidebar-email').textContent = user.email
@@ -58,23 +71,26 @@ function loadLoginPage() {
   switchToLoginPage()
 }
 
-function loadMainPage(user) {
+async function loadMainPage(user) {
+  updateSidernavInformation(user)
+  await displayConversationList(user)
   switchToMainPage()
-  updateSiderBarInformation(user)
-  displayConversationList(user)
+  listenToRealTimeConversationListUpdate(user)
 }
 
 async function loadChatPage(user, conversation) {
   let conversationSetting = conversation.members.find(member => member.uid === user.uid)
   currentConversation = conversation
   currentConversation.messages = []
+  closeSidenav()
+  closeModal()
   switchToChatPage()
   updateChatHeader(conversationSetting)
-  listenToRealTimeUpdate(conversation)
+  listenToRealTimeMessageUpdate(conversation)
 }
 
 
-function listenToRealTimeUpdate(conversation) {
+function listenToRealTimeMessageUpdate(conversation) {
   let mydb = firebase.firestore()
   let conversationRef = mydb.collection('conversations')
     .doc(conversation.conId).collection('messages')
@@ -98,6 +114,18 @@ function listenToRealTimeUpdate(conversation) {
   currentConversation.messages = orderMessagesByTime(currentConversation.messages)
 }
 
+async function listenToRealTimeConversationListUpdate(user) {
+  let mydb = firebase.firestore()
+  let conversationRef = mydb.collection('users').doc(user.uid)
+  
+  conversationListListener = conversationRef.onSnapshot(async (doc) => {
+    loggedInUser = doc.data()
+    await displayConversationList(loggedInUser)
+  })
+  
+  // currentConversation.messages = orderMessagesByTime(currentConversation.messages)
+}
+
 
 function orderMessagesByTime(messages) {
   return messages.sort((a, b) => a.timestamp.seconds - b.timestamp.seconds)
@@ -118,7 +146,6 @@ function displayMessage(msg) {
   // append it to conversation list
   $('#chat-body').appendChild(template)
 }
-
 
 
 function sendMessage(msg) {
@@ -161,6 +188,8 @@ async function signOut() {
 async function displayConversationList(user) {
   let conversationList = await db.getConversationList(user)
   
+  $('#conversation-list').innerHTML = ''
+  
   for (let conversation of conversationList) {
     await displayConversation(user, conversation)
   }
@@ -185,6 +214,71 @@ async function displayConversation(user, conversation) {
   $('#conversation-list').appendChild(template)
 }
 
+async function displayContactsList() {
+  
+  let contactsListEl = $('#contacts-list')
+  contactsListEl.innerHTML = ''
+  
+  let {contacts} = loggedInUser
+  let usersList = []
+  
+  for (let contactUid of contacts) {
+    let user = db.getUserByUid(contactUid)
+    usersList.push(user)
+  }
+  
+  Promise.all(usersList).then((users) => {
+    for (let user of users)
+      displayContact(loggedInUser, user)
+  })
+  
+}
+
+
+function displayContact(currentUser, targetUser) {
+  let contactsListEl = $('#contacts-list')
+  
+  let template = $('contact-template>li').cloneNode(true)
+  template.querySelector('img')
+    .setAttribute('src', targetUser.photoURL)
+  template.querySelector('span').textContent = targetUser.displayName
+  template.querySelector('p').textContent = 'Last seen 9 mins ago'
+  template.on('click', (e) => {
+    createNewConversationOrLoadConversation(currentUser, targetUser)
+  })
+  contactsListEl.appendChild(template)
+}
+
+async function createNewConversationOrLoadConversation(currentUser, targetUser) {
+  let conversations = await db.getConversations()
+  // trying to find two members in a conversation
+  for (const conversation of conversations) {
+    let {conId, members} = conversation
+    let membersUids = []
+    for (const {uid} of members) {
+      membersUids.push(uid)
+    }
+    if (membersUids.includes(currentUser.uid)
+      && membersUids.includes(targetUser.uid)) {
+      console.log('getConversation', conversation)
+      // load conversation
+      loadChatPage(currentUser, conversation)
+    } else {
+      // create and get new conversation
+      let newConversation = await db.createNewConversation(currentUser, targetUser)
+      currentUser.activeConversations.push(newConversation.conId)
+      targetUser.activeConversations.push(newConversation.conId)
+      currentUser.historyConversations.push(newConversation.conId)
+      targetUser.historyConversations.push(newConversation.conId)
+      
+      await db.updateUser(currentUser)
+      await db.updateUser(targetUser)
+      loadChatPage(currentUser, newConversation)
+    }
+  }
+}
+
+
 export {
   signIn,
   signOut,
@@ -192,5 +286,7 @@ export {
   loadChatPage,
   loadLoginPage,
   switchToMainPage,
-  sendMessage
+  sendMessage,
+  closeSidenav,
+  displayContactsList
 }

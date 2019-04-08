@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6b7a6c6b-1835-46c8-9f9a-abfc5d35134c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/action.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/helper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/db.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,16 +18,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.5537255">
       <split-first>
         <splitter split-orientation="vertical" split-proportion="0.5">
           <split-first>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-              <file pinned="false" current-in-tab="false">
+              <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/public/index.html">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="546">
-                      <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+                    <state relative-caret-position="176">
+                      <caret line="125" column="47" selection-start-line="125" selection-start-column="47" selection-end-line="125" selection-end-column="47" />
+                      <folding>
+                        <element signature="n#style#0;n#message-right-template#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                        <element signature="n#style#0;n#conta#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                      </folding>
                     </state>
                   </provider>
                 </entry>
@@ -40,15 +46,6 @@
                 </entry>
               </file>
               <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/js/db.js">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="602">
-                      <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/public/app.js">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="280">
@@ -57,11 +54,11 @@
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="true">
+              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/public/js/helper.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="42">
-                      <caret line="3" column="17" lean-forward="true" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+                    <state relative-caret-position="84">
+                      <caret line="6" selection-start-line="6" selection-end-line="6" />
                     </state>
                   </provider>
                 </entry>
@@ -69,24 +66,15 @@
             </leaf>
           </split-first>
           <split-second>
-            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+            <leaf>
               <file pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/public/js/action.js">
+                <entry file="file://$PROJECT_DIR$/public/index.html">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="84">
-                      <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+                    <state relative-caret-position="117">
+                      <caret line="205" column="66" selection-start-line="205" selection-start-column="66" selection-end-line="205" selection-end-column="66" />
                       <folding>
-                        <element signature="e#0#29#0" expanded="true" />
+                        <element signature="n#style#0;n#message-right-template#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                       </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/js/model.js">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="196">
-                      <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
                     </state>
                   </provider>
                 </entry>
@@ -96,29 +84,49 @@
         </splitter>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/index_bk.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="378">
-                  <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/public/js/app.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="154">
-                  <caret line="11" column="46" lean-forward="true" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
-                  <folding>
-                    <element signature="e#0#29#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
+        <splitter split-orientation="vertical" split-proportion="0.5">
+          <split-first>
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/public/js/app.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="360">
+                      <caret line="74" column="19" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
+                      <folding>
+                        <element signature="e#0#29#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/public/js/db.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="-154">
+                      <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/public/js/action.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="234">
+                      <caret line="187" column="15" selection-start-line="187" selection-start-column="15" selection-end-line="187" selection-end-column="15" />
+                      <folding>
+                        <element signature="e#0#29#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
       </split-second>
     </splitter>
   </component>
@@ -131,25 +139,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$</find>
-      <find>b</find>
-      <find>za</find>
-      <find>avatar</find>
-      <find>collection</find>
-      <find>chat-body</find>
-      <find>sidenav</find>
-      <find>login</find>
-      <find>circle</find>
-      <find>db</find>
-      <find>siderbar</find>
-      <find>arrow_back</find>
-      <find>sign out</find>
       <find>emily.png</find>
       <find>conversationSetting</find>
       <find>messages</find>
       <find>displayown</find>
       <find>sendMess</find>
-      <find>loadChat</find>
       <find>sender</find>
       <find>postMess</find>
       <find>loadChatpage</find>
@@ -158,7 +152,27 @@
       <find>loadlogin</find>
       <find>first_name</find>
       <find>singout</find>
+      <find>addEventListener</find>
+      <find>db.</find>
+      <find>getMessages</find>
+      <find>closeSIde</find>
+      <find>close</find>
+      <find>conetent</find>
+      <find>loadChat</find>
+      <find>update</find>
+      <find>loadChatPa</find>
+      <find>updateUser</find>
+      <find>loadMain</find>
+      <find>loadmain</find>
+      <find>mainpage</find>
+      <find>contacts</find>
+      <find>listento</find>
+      <find>chatListener</find>
+      <find>realtime</find>
     </findStrings>
+    <replaceStrings>
+      <replace>on</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -189,10 +203,10 @@
         <option value="$PROJECT_DIR$/public/js/help.js" />
         <option value="$PROJECT_DIR$/public/js/model.js" />
         <option value="$PROJECT_DIR$/public/css/mystyle.scss" />
-        <option value="$PROJECT_DIR$/public/js/db.js" />
-        <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/public/js/action.js" />
         <option value="$PROJECT_DIR$/public/js/helper.js" />
+        <option value="$PROJECT_DIR$/public/js/db.js" />
+        <option value="$PROJECT_DIR$/public/js/action.js" />
+        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/js/app.js" />
       </list>
     </option>
@@ -204,9 +218,9 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1911" />
-    <option name="width" value="1938" />
-    <option name="height" value="2044" />
+    <option name="x" value="1910" />
+    <option name="width" value="1940" />
+    <option name="height" value="2118" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -350,7 +364,10 @@
       <workItem from="1553657427593" duration="6546000" />
       <workItem from="1553740030929" duration="604000" />
       <workItem from="1553741174864" duration="6906000" />
-      <workItem from="1554001343966" duration="2714000" />
+      <workItem from="1554001343966" duration="3990000" />
+      <workItem from="1554343905097" duration="924000" />
+      <workItem from="1554672460085" duration="12000" />
+      <workItem from="1554709895905" duration="13856000" />
     </task>
     <task id="LOCAL-00001" summary="done the prototype">
       <created>1552301977596</created>
@@ -422,17 +439,30 @@
       <option name="project" value="LOCAL" />
       <updated>1553857604163</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="add on(), ready() function to the project">
+      <created>1554004355659</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1554004355659</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add on(), ready() function to the project&#10;deleted unused functions">
+      <created>1554005026333</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1554005026333</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85617000" />
+    <option name="totallyTimeSpent" value="101685000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1529" y="0" width="1550" height="1635" extended-state="0" />
-    <editor active="true" />
+    <frame x="1528" y="0" width="1552" height="1694" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15862525" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13927393" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -445,7 +475,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Quokka" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32934132" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3290653" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -467,7 +497,9 @@
     <MESSAGE value="login logic done&#10;main page logic done&#10;developing chat page" />
     <MESSAGE value="basically done the chat page&#10;need to have more conversations and contacts" />
     <MESSAGE value="optimized new message behaviors" />
-    <option name="LAST_COMMIT_MESSAGE" value="optimized new message behaviors" />
+    <MESSAGE value="add on(), ready() function to the project" />
+    <MESSAGE value="add on(), ready() function to the project&#10;deleted unused functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="add on(), ready() function to the project&#10;deleted unused functions" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/css/mystyle.css">
@@ -526,13 +558,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/mystyle.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2674">
@@ -547,10 +572,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/db.js">
+    <entry file="file://$PROJECT_DIR$/public/js/helper.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
+        <state relative-caret-position="84">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
@@ -568,27 +593,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-154">
+          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/action.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+        <state relative-caret-position="234">
+          <caret line="187" column="15" selection-start-line="187" selection-start-column="15" selection-end-line="187" selection-end-column="15" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/helper.js">
+    <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="3" column="17" lean-forward="true" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        <state relative-caret-position="176">
+          <caret line="125" column="47" selection-start-line="125" selection-start-column="47" selection-end-line="125" selection-end-column="47" />
+          <folding>
+            <element signature="n#style#0;n#message-right-template#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#conta#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="11" column="46" lean-forward="true" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+        <state relative-caret-position="360">
+          <caret line="74" column="19" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
