@@ -82,7 +82,7 @@
 <div class="container" id="mainpage-container">
     <header>
         <nav>
-            <div class="nav-wrapper  green accent-4">
+            <div class="nav-wrapper  green accent-4" id="nav-normal">
 
                 <a href="#!" class="brand-logo center">
                     <span style="font-size: 24px;">PPM</span>
@@ -94,9 +94,23 @@
                 <!--<a href="#" class="sidenav-trigger right"><i class="material-icons">search</i></a>-->
 
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="#"><i class="material-icons">search</i></a></li>
-                    <li><a href="#" data-target="mobile-demo"><i class="material-icons">more_vert</i></a></li>
+                    <li>
+                        <a href="#" id="button-search"><i class="material-icons">search</i></a>
+                    </li>
+                    <li>
+                        <a href="#" data-target="mobile-demo"><i class="material-icons">more_vert</i></a>
+                    </li>
                 </ul>
+            </div>
+
+            <div class="nav-wrapper green accent-4" id="nav-search">
+                <form>
+                    <div class="input-field">
+                        <input id="input-search" type="search" required>
+                        <label class="label-icon" for="input-search"><i class="material-icons">search</i></label>
+                        <i class="material-icons">close</i>
+                    </div>
+                </form>
             </div>
         </nav>
         <ul class="sidenav scroll scroll1" id="mobile-demo">
@@ -121,9 +135,11 @@
             </li>
             <li><a href="#"><i class="material-icons">group</i>New Group Chat</a></li>
             <li><a href="#"><i class="material-icons">speaker_notes</i>New Channel</a></li>
-<!--            <li><a href="#" id="sidenav-close"><i class="material-icons">speaker_notes</i>Close Sidenav</a></li>-->
+            <!--            <li><a href="#" id="sidenav-close"><i class="material-icons">speaker_notes</i>Close Sidenav</a></li>-->
             <div class="divider"></div>
-            <li><a href="#" id="button-contacts"><i class="material-icons">perm_contact_calendar</i>Contacts</a></li>
+            <li><a href="#" id="button-contacts" class="modal-trigger" data-target="modal-newchat">
+                <i class="material-icons">perm_contact_calendar</i>Contacts</a>
+            </li>
             <li><a href="#"><i class="material-icons">save_alt</i>Saved Messages</a></li>
             <li><a href="#"><i class="material-icons">call</i>Calls</a></li>
             <li><a href="#"><i class="material-icons">person_add</i>Invite Friends</a></li>

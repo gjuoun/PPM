@@ -64,9 +64,9 @@ $('#chat-input').on('keyup', async (e) => {
 })
 
 
-$('#sidenav-close').on('click', (e) => {
-  action.closeSidenav()
-})
+// $('#sidenav-close').on('click', (e) => {
+//   action.closeSidenav()
+// })
 
 $('#button-newchat').on('click', async (e) => {
   await action.displayContactsList()
@@ -75,3 +75,10 @@ $('#button-newchat').on('click', async (e) => {
 $('#button-contacts').on('click', async (e) => {
   await action.displayContactsList()
 })
+
+$('#button-search').on('click', (e) => {
+  action.openSearchbar()
+})
+
+
+

@@ -23,6 +23,24 @@ async function getConversations() {
   return null
 }
 
+async function getUserByEmail(email) {
+  let result = []
+  let docs = await db.collection('users').get()
+  if (!docs.empty) {
+    docs.forEach((doc) => {
+      result.push(doc.data())
+    })
+    let users = await Promise.all(result)
+    // find the user with the email
+    return users.find((user) => {
+      if (user.email === email)
+        return user
+    })
+  }
+  return null
+}
+
+
 // return uid :str
 async function createUser(googleUser) {
   const {displayName, uid, photoURL, email} = googleUser
@@ -99,13 +117,6 @@ async function getConversationList(user) {
     // load messages
     if (result.exists) {
       result = await result.data()
-      // result.messages = []
-      
-      // let {docs} = await conversationRef.collection('messages').get()
-      
-      // push messages to conversationList
-      // for (let doc of docs)
-      //   result.messages.push(doc.data())
       
       conversations.push(result)
     }
@@ -114,9 +125,32 @@ async function getConversationList(user) {
   return conversations
 }
 
+async function findTargetConversationByTwoUserId(firstUid, secondUid) {
+  let firstUesr = await getUserByUid(firstUid)
+  let {activeConversations} = firstUesr
+  // console.log(activeConversations)
+  for (let conId of activeConversations) {
+    let findConversation = await getConversationByConId(conId)
+    if (findConversation) {
+      let {members: [userA, userB]} = findConversation
+      // console.log(members)
+      return findConversation
+      break
+    }
+  }
+  return null
+}
 
-async function getConversation(conversationId) {
 
+async function getConversationByConId(conversationId) {
+  let result = null
+  let doc = await db.collection('conversations').doc(conversationId).get()
+  if (doc.exists) {
+    result = doc.data()
+    return result
+  } else {
+    return null
+  }
 }
 
 async function getMessages(conversationId) {
@@ -153,9 +187,10 @@ export {
   createUser,
   updateUser,
   getConversationList,
-  getConversation,
   getMessages,
   postMessage,
   getConversations,
-  createNewConversation
+  createNewConversation,
+  getUserByEmail,
+  findTargetConversationByTwoUserId
 }

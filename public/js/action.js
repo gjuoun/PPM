@@ -1,7 +1,7 @@
 import {$} from './helper.js'
 import * as db from './db.js'
 
-let loggedInUser = null, currentConversation = ''
+let currentUser = null, currentConversation = ''
 let chatListener = null, conversationListListener = null
 
 // global elements
@@ -57,6 +57,92 @@ function switchToChatPage() {
   $('#chat-input').focus()
 }
 
+function openSearchbar() {
+  let normalEl = $('#nav-normal')
+  let searchEl = $('#nav-search')
+  let inputSearchEl = $('#input-search')
+  let inputSearchListener = null
+  hide(normalEl)
+  show(searchEl)
+  inputSearchEl.focus()
+  
+  inputSearchEl.addEventListener('keyup', keyupFunction)
+  
+  inputSearchEl.on('blur', (e) => {
+    closeSearchbar()
+  })
+  
+  
+}
+
+async function keyupFunction(e) {
+  let inputSearchEl = $('#input-search')
+  
+  if (e.keyCode === 13) {
+    e.preventDefault()
+    let userInput = inputSearchEl.value
+    await searchUser(userInput)
+  }
+}
+
+async function searchUser(userInput) {
+  let findUser = await db.getUserByEmail(userInput)
+  if (findUser)
+    if (findUser.uid !== currentUser.uid) {
+      await searchToTalk(findUser)
+    } else {
+      alert('Self talk is not allowed.')
+    }
+  else
+    alert('No such a user')
+}
+
+async function searchToTalk(targetUser) {
+  let currentUserUpdated = await db.getUserByUid(currentUser.uid)
+  let targetUserUpdated = await db.getUserByUid(targetUser.uid)
+  
+  let currentContact = currentUserUpdated.contacts
+  let targetContact = targetUserUpdated.contacts
+  
+  if (currentContact.includes(targetUserUpdated.uid)
+    && targetContact.includes(currentUserUpdated.uid)) {
+    let conv = await db.findTargetConversationByTwoUserId(currentUserUpdated.uid, targetUserUpdated.uid)
+    await loadChatPage(currentUserUpdated, conv)
+  } else {
+    console.log('not multi user')
+    if (!targetContact.includes(currentUserUpdated.uid)
+      && !currentContact.includes(targetUserUpdated.uid)) {
+      
+      currentContact.push(targetUserUpdated.uid)
+      targetContact.push(currentUserUpdated.uid)
+      
+      let newConversation = await db.createNewConversation(currentUserUpdated, targetUserUpdated)
+      
+      // update contact list
+      currentUserUpdated.contacts = currentContact
+      targetUserUpdated.contacts = targetContact
+      // update conversation list
+      currentUserUpdated.activeConversations.push(newConversation.conId)
+      targetUserUpdated.activeConversations.push(newConversation.conId)
+      
+      await db.updateUser(currentUserUpdated)
+      await db.updateUser(targetUserUpdated)
+      await loadChatPage(currentUserUpdated, newConversation)
+    }
+  }
+}
+
+
+function closeSearchbar() {
+  let normalEl = $('#nav-normal')
+  let searchEl = $('#nav-search')
+  let inputSearchEl = $('#input-search')
+  inputSearchEl.value = ''
+  inputSearchEl.removeEventListener('keyup', keyupFunction)
+  
+  hide(searchEl)
+  show(normalEl)
+}
 
 function updateSidernavInformation(user) {
   // console.log('siderbar', user)
@@ -119,8 +205,9 @@ async function listenToRealTimeConversationListUpdate(user) {
   let conversationRef = mydb.collection('users').doc(user.uid)
   
   conversationListListener = conversationRef.onSnapshot(async (doc) => {
-    loggedInUser = doc.data()
-    await displayConversationList(loggedInUser)
+    currentUser = doc.data()
+    
+    await displayConversationList(currentUser)
   })
   
   // currentConversation.messages = orderMessagesByTime(currentConversation.messages)
@@ -135,7 +222,7 @@ function displayMessage(msg) {
   // console.log('msg', msg.sender)
   // console.log('loggedInUser', loggedInUser.uid)
   let template
-  if (msg.sender === loggedInUser.uid)
+  if (msg.sender === currentUser.uid)
     template = $('message-right-template>div').cloneNode(true)
   else
     template = $('message-left-template>div').cloneNode(true)
@@ -149,7 +236,7 @@ function displayMessage(msg) {
 
 
 function sendMessage(msg) {
-  db.postMessage(msg, loggedInUser, currentConversation.conId)
+  db.postMessage(msg, currentUser, currentConversation.conId)
   // loadChatPage(loggedInUser, currentConversation)
 }
 
@@ -158,7 +245,7 @@ function updateChatHeader(conversationSetting) {
   let chatHeaderEl = $('#chat-header-title')
   chatHeaderEl.querySelector('img').setAttribute('src', conversationIcon)
   chatHeaderEl.querySelector('span').textContent = conversationTitle
-  console.log(conversationSetting)
+  // console.log(conversationSetting)
 }
 
 
@@ -167,15 +254,15 @@ async function signIn() {
   await firebase.auth().signInWithPopup(provider)
   
   let googleUser = await db.getCurrentGoogleUser()
-  loggedInUser = await db.getUserByUid(googleUser.uid)
+  currentUser = await db.getUserByUid(googleUser.uid)
   
-  if (googleUser && loggedInUser) {
-    loadMainPage(loggedInUser)
-    await db.updateUser(loggedInUser)
-  } else if (googleUser && !loggedInUser) {
+  if (googleUser && currentUser) {
+    loadMainPage(currentUser)
+    await db.updateUser(currentUser)
+  } else if (googleUser && !currentUser) {
     await db.createUser(googleUser)
-    loggedInUser = await db.getUserByUid(googleUser.uid)
-    loadMainPage(loggedInUser)
+    currentUser = await db.getUserByUid(googleUser.uid)
+    loadMainPage(currentUser)
   }
 }
 
@@ -219,7 +306,9 @@ async function displayContactsList() {
   let contactsListEl = $('#contacts-list')
   contactsListEl.innerHTML = ''
   
-  let {contacts} = loggedInUser
+  let updatedUesr = await db.getUserByUid(currentUser.uid)
+  
+  let {contacts} = updatedUesr
   let usersList = []
   
   for (let contactUid of contacts) {
@@ -228,8 +317,8 @@ async function displayContactsList() {
   }
   
   Promise.all(usersList).then((users) => {
-    for (let user of users)
-      displayContact(loggedInUser, user)
+    for (let targetUser of users)
+      displayContact(currentUser, targetUser)
   })
   
 }
@@ -239,6 +328,7 @@ function displayContact(currentUser, targetUser) {
   let contactsListEl = $('#contacts-list')
   
   let template = $('contact-template>li').cloneNode(true)
+  template.id = 'contact-' + targetUser.uid
   template.querySelector('img')
     .setAttribute('src', targetUser.photoURL)
   template.querySelector('span').textContent = targetUser.displayName
@@ -250,31 +340,45 @@ function displayContact(currentUser, targetUser) {
 }
 
 async function createNewConversationOrLoadConversation(currentUser, targetUser) {
+  
+  
   let conversations = await db.getConversations()
+  let currentUserUpdated = await db.getUserByUid(currentUser.uid)
+  let targetUserUpdated = await db.getUserByUid(targetUser.uid)
+  
+  // console.log('we have ', currentUserUpdated)
+  // console.log('we have targer', targetUserUpdated)
+  
   // trying to find two members in a conversation
+  let findMembers = false
   for (const conversation of conversations) {
-    let {conId, members} = conversation
-    let membersUids = []
-    for (const {uid} of members) {
-      membersUids.push(uid)
-    }
-    if (membersUids.includes(currentUser.uid)
-      && membersUids.includes(targetUser.uid)) {
-      console.log('getConversation', conversation)
+    
+    let {members: [first, second]} = conversation
+    let membersUids = [first.uid, second.uid]
+    
+    if (membersUids.includes(targetUserUpdated.uid) && membersUids.includes(currentUser.uid)) {
+      findMembers = true
       // load conversation
-      loadChatPage(currentUser, conversation)
-    } else {
-      // create and get new conversation
-      let newConversation = await db.createNewConversation(currentUser, targetUser)
-      currentUser.activeConversations.push(newConversation.conId)
-      targetUser.activeConversations.push(newConversation.conId)
-      currentUser.historyConversations.push(newConversation.conId)
-      targetUser.historyConversations.push(newConversation.conId)
-      
-      await db.updateUser(currentUser)
-      await db.updateUser(targetUser)
-      loadChatPage(currentUser, newConversation)
+      await loadChatPage(currentUserUpdated, conversation)
+      break
     }
+  }
+  
+  if (!findMembers) {
+    // create and get new conversation
+    console.log()
+    let newConversation = await db.createNewConversation(currentUserUpdated, targetUserUpdated)
+    console.log('new conv', newConversation)
+    currentUserUpdated.activeConversations.push(newConversation.conId)
+    targetUserUpdated.activeConversations.push(newConversation.conId)
+    // currentUserUpdated.historyConversations.push(newConversation.conId)
+    // targetUserUpdated.historyConversations.push(newConversation.conId)
+    //
+    console.log('new conversation', newConversation)
+    await db.updateUser(currentUserUpdated)
+    await db.updateUser(targetUserUpdated)
+    await loadChatPage(currentUserUpdated, newConversation)
+    
   }
 }
 
@@ -288,5 +392,7 @@ export {
   switchToMainPage,
   sendMessage,
   closeSidenav,
-  displayContactsList
+  displayContactsList,
+  openSearchbar,
+  closeSearchbar
 }
