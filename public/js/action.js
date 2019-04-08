@@ -77,9 +77,9 @@ function openSearchbar() {
 
 async function keyupFunction(e) {
   let inputSearchEl = $('#input-search')
+  e.preventDefault()
   
   if (e.keyCode === 13) {
-    e.preventDefault()
     let userInput = inputSearchEl.value
     await searchUser(userInput)
   }
