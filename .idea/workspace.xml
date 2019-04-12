@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b7a6c6b-1835-46c8-9f9a-abfc5d35134c" name="Default Changelist" comment="user now can search other users by email adderss &#10;then start a conversation">
+    <list default="true" id="6b7a6c6b-1835-46c8-9f9a-abfc5d35134c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/chat.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index_bk.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/model.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/login.html" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -14,127 +19,73 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5537255">
+    <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
-        <splitter split-orientation="vertical" split-proportion="0.5">
-          <split-first>
-            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-              <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/index.html">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="540">
-                      <caret line="111" selection-start-line="111" selection-end-line="111" />
-                      <folding>
-                        <element signature="n#style#0;n#message-right-template#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                        <element signature="n#style#0;n#conta#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/css/mystyle.scss">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="2674">
-                      <caret line="191" column="16" selection-start-line="191" selection-start-column="16" selection-end-line="191" selection-end-column="16" />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/app.js">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="280">
-                      <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/js/helper.js">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="84">
-                      <caret line="6" selection-start-line="6" selection-end-line="6" />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/public/js/db.js">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="107">
-                      <caret line="115" column="44" lean-forward="true" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="44" />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-first>
-          <split-second>
-            <leaf>
-              <file pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/public/index.html">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="340">
-                      <caret line="136" column="30" selection-start-line="136" selection-start-column="29" selection-end-line="136" selection-end-column="30" />
-                      <folding>
-                        <element signature="n#style#0;n#message-right-template#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-second>
-        </splitter>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/public/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="168">
+                  <caret line="68" column="31" lean-forward="true" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+                  <folding>
+                    <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#nav#0;n#header#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#footer#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#conversation-template#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#message-left-template#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#message-right-template#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#contact-template#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/firebase.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="84">
+                  <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
       </split-first>
       <split-second>
-        <splitter split-orientation="vertical" split-proportion="0.47631243">
-          <split-first>
-            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-              <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/js/app.js">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="-5">
-                      <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
-                      <folding>
-                        <element signature="e#0#29#0" expanded="true" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/public/js/action.js">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="359">
-                      <caret line="371" column="4" lean-forward="true" selection-start-line="371" selection-start-column="4" selection-end-line="372" selection-end-column="69" />
-                      <folding>
-                        <element signature="e#0#29#0" expanded="true" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-first>
-          <split-second>
-            <leaf>
-              <file pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/public/js/action.js">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="277">
-                      <caret line="114" column="6" selection-start-line="114" selection-start-column="6" selection-end-line="114" selection-end-column="6" />
-                      <folding>
-                        <element signature="e#0#29#0" expanded="true" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-second>
-        </splitter>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/public/js/db.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="322">
+                  <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/js/action.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-2576">
+                  <caret line="174" column="45" lean-forward="true" selection-start-line="174" selection-start-column="45" selection-end-line="174" selection-end-column="45" />
+                  <folding>
+                    <element signature="e#0#29#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/js/app.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-266">
+                  <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+                  <folding>
+                    <element signature="e#0#29#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
       </split-second>
     </splitter>
   </component>
@@ -147,46 +98,44 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>singout</find>
-      <find>addEventListener</find>
-      <find>db.</find>
-      <find>getMessages</find>
-      <find>closeSIde</find>
-      <find>close</find>
-      <find>conetent</find>
+      <find>$</find>
+      <find>b</find>
+      <find>za</find>
+      <find>avatar</find>
+      <find>collection</find>
+      <find>chat-body</find>
+      <find>sidenav</find>
+      <find>login</find>
+      <find>circle</find>
+      <find>db</find>
+      <find>siderbar</find>
+      <find>arrow_back</find>
+      <find>sign out</find>
+      <find>emily.png</find>
+      <find>conversationSetting</find>
+      <find>messages</find>
+      <find>displayown</find>
+      <find>sendMess</find>
       <find>loadChat</find>
-      <find>update</find>
-      <find>loadChatPa</find>
-      <find>loadmain</find>
-      <find>mainpage</find>
-      <find>contacts</find>
-      <find>listento</find>
-      <find>chatListener</find>
-      <find>realtime</find>
-      <find>main</find>
-      <find>in</find>
-      <find>updateUser</find>
-      <find>switch</find>
-      <find>openSearchbar</find>
-      <find>search</find>
-      <find>Contacts</find>
-      <find>conversation</find>
-      <find>contact</find>
-      <find>loadMain</find>
-      <find>SEARCH</find>
-      <find>getConversation</find>
-      <find>close side</find>
-      <find>findTargetConversationByTwoUserId</find>
+      <find>sender</find>
+      <find>postMess</find>
+      <find>loadChatpage</find>
+      <find>display</find>
+      <find>signin</find>
+      <find>loadlogin</find>
+      <find>first_name</find>
+      <find>singout</find>
+      <find>se</find>
+      <find>mess</find>
+      <find>P</find>
     </findStrings>
-    <replaceStrings>
-      <replace>on</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="0.1" />
+        <entry key="$PROJECT_DIR$" value="0.3" />
       </map>
     </option>
   </component>
@@ -209,13 +158,14 @@
         <option value="$PROJECT_DIR$/public/index_bk.html" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/index.html" />
         <option value="$PROJECT_DIR$/public/js/help.js" />
+        <option value="$PROJECT_DIR$/public/js/helper.js" />
         <option value="$PROJECT_DIR$/public/js/model.js" />
         <option value="$PROJECT_DIR$/public/css/mystyle.scss" />
-        <option value="$PROJECT_DIR$/public/js/helper.js" />
-        <option value="$PROJECT_DIR$/public/js/app.js" />
-        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/js/db.js" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/public/js/app.js" />
         <option value="$PROJECT_DIR$/public/js/action.js" />
+        <option value="$PROJECT_DIR$/.firebaserc" />
       </list>
     </option>
   </component>
@@ -225,10 +175,11 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1910" />
-    <option name="width" value="1940" />
-    <option name="height" value="2119" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="240" />
+    <option name="y" value="127" />
+    <option name="width" value="1440" />
+    <option name="height" value="774" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -238,13 +189,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="PPM" type="b2602c69:ProjectViewProjectNode" />
               <item name="PPM" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PPM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PPM" type="462c0819:PsiDirectoryNode" />
+              <item name=".firebase" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PPM" type="b2602c69:ProjectViewProjectNode" />
@@ -256,38 +211,18 @@
               <item name="PPM" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="PPM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PPM" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PPM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PPM" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PPM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-            </path>
-            <path>
-              <item name="PPM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Scratches" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="11.11.0" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.13.0" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -372,10 +307,8 @@
       <workItem from="1553657427593" duration="6546000" />
       <workItem from="1553740030929" duration="604000" />
       <workItem from="1553741174864" duration="6906000" />
-      <workItem from="1554001343966" duration="3990000" />
-      <workItem from="1554343905097" duration="924000" />
-      <workItem from="1554672460085" duration="12000" />
-      <workItem from="1554709895905" duration="26062000" />
+      <workItem from="1554738017175" duration="2599000" />
+      <workItem from="1555081876855" duration="737000" />
     </task>
     <task id="LOCAL-00001" summary="done the prototype">
       <created>1552301977596</created>
@@ -440,51 +373,24 @@
       <option name="project" value="LOCAL" />
       <updated>1553856158416</updated>
     </task>
-    <task id="LOCAL-00010" summary="optimized new message behaviors">
-      <created>1553857604163</created>
+    <task id="LOCAL-00010" summary="add notification">
+      <created>1554134080085</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1553857604163</updated>
+      <updated>1554134080085</updated>
     </task>
-    <task id="LOCAL-00011" summary="add on(), ready() function to the project">
-      <created>1554004355659</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1554004355659</updated>
-    </task>
-    <task id="LOCAL-00012" summary="add on(), ready() function to the project&#10;deleted unused functions">
-      <created>1554005026333</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1554005026333</updated>
-    </task>
-    <task id="LOCAL-00013" summary="users now can see contact and start a new chat">
-      <created>1554723988290</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1554723988290</updated>
-    </task>
-    <task id="LOCAL-00014" summary="user now can search other users by email adderss &#10;then start a conversation">
-      <created>1554735656125</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1554735656125</updated>
-    </task>
-    <option name="localTasksCounter" value="15" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113891000" />
+    <option name="totallyTimeSpent" value="86849000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1528" y="0" width="1552" height="1694" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13927393" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.120290816" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -497,8 +403,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Quokka" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3290653" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49966952" weight="0.39235127" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50033045" side_tool="true" weight="0.3286119" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -518,12 +424,8 @@
     <MESSAGE value="integrated with Firebase&#10;removed the login page element&#10;now using google auth login" />
     <MESSAGE value="login logic done&#10;main page logic done&#10;developing chat page" />
     <MESSAGE value="basically done the chat page&#10;need to have more conversations and contacts" />
-    <MESSAGE value="optimized new message behaviors" />
-    <MESSAGE value="add on(), ready() function to the project" />
-    <MESSAGE value="add on(), ready() function to the project&#10;deleted unused functions" />
-    <MESSAGE value="users now can see contact and start a new chat" />
-    <MESSAGE value="user now can search other users by email adderss &#10;then start a conversation" />
-    <option name="LAST_COMMIT_MESSAGE" value="user now can search other users by email adderss &#10;then start a conversation" />
+    <MESSAGE value="add notification" />
+    <option name="LAST_COMMIT_MESSAGE" value="add notification" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/css/mystyle.css">
@@ -535,9 +437,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/img/Sam.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/firebase/index.d.ts" />
     <entry file="file://$PROJECT_DIR$/node_modules/materialize-css/js/tabs.js" />
@@ -551,9 +450,6 @@
     <entry file="file://$PROJECT_DIR$/public/favicon.ico">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/firebase/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
@@ -561,55 +457,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/materialize-css/dist/js/materialize.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="5" column="7837" selection-start-line="5" selection-start-column="7837" selection-end-line="5" selection-end-column="7837" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/firebase.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/mystyle.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2674">
-          <caret line="191" column="16" selection-start-line="191" selection-start-column="16" selection-end-line="191" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/helper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/index.html" />
     <entry file="file://$PROJECT_DIR$/public/index_bk.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -617,39 +465,104 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/helper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/materialize-css/dist/js/materialize.min.js" />
+    <entry file="file://$PROJECT_DIR$/public/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firebase/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.firebase/hosting.cHVibGlj.cache">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="217" column="63" selection-start-line="217" selection-start-column="63" selection-end-line="217" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firebase.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.firebaserc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="-266">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/db.js">
+    <entry file="file://$PROJECT_DIR$/public/css/mystyle.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="115" column="44" lean-forward="true" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="44" />
+        <state relative-caret-position="182">
+          <caret line="246" column="20" selection-start-line="246" selection-start-column="20" selection-end-line="246" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/action.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="371" column="4" lean-forward="true" selection-start-line="371" selection-start-column="4" selection-end-line="372" selection-end-column="69" />
+        <state relative-caret-position="-2576">
+          <caret line="174" column="45" lean-forward="true" selection-start-line="174" selection-start-column="45" selection-end-line="174" selection-end-column="45" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="14" column="19" lean-forward="true" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="136" column="30" selection-start-line="136" selection-start-column="29" selection-end-line="136" selection-end-column="30" />
+        <state relative-caret-position="168">
+          <caret line="68" column="31" lean-forward="true" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
           <folding>
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#nav#0;n#header#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#footer#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#conversation-template#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#message-left-template#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#message-right-template#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#contact-template#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
