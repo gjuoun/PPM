@@ -1,5 +1,3 @@
-import User from './model.js'
-
 const db = firebase.firestore()
 
 // return google user object
