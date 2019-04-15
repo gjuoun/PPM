@@ -109,7 +109,7 @@ async function searchToTalk(targetUser) {
     let conv = await db.findTargetConversationByTwoUserId(currentUserUpdated.uid, targetUserUpdated.uid)
     await loadChatPage(currentUserUpdated, conv)
   } else {
-    console.log('not multi user')
+    // console.log('not multi user')
     if (!targetContact.includes(currentUserUpdated.uid)
       && !currentContact.includes(targetUserUpdated.uid)) {
       
@@ -190,7 +190,7 @@ function listenToRealTimeMessageUpdate(conversation) {
           
         }
         currentConversation.messages.push(newmsg)
-        console.log('new message', newmsg)
+        // console.log('new message', newmsg)
         displayMessage(newmsg)
         scrollToChatBottom()
       }
